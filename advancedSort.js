@@ -9,11 +9,14 @@ function sortOnParameter(array, parameter){
   switch(parameter){
     case "id":
       array.sort(function(a, b){
-        return a[parameter] - b[parameter];
+        return a["id"] - b["id"];
       });
       break;
 
     case "name":
+      array.sort(function(a, b){
+        return b["age"] - a["age"];
+      });
       array.sort(function(a, b){
         var nameA = a.name.toUpperCase();
         var nameB = b.name.toUpperCase();
@@ -29,7 +32,7 @@ function sortOnParameter(array, parameter){
 
     case "age":
       array.sort(function(a, b){
-        return a[parameter] - b[parameter];
+        return a["age"] - b["age"];
       });
       break;
   }
